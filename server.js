@@ -1,10 +1,16 @@
 const express = require('express');
 const ytdl = require('ytdl-core');
+const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
-// خدمة الملفات من مجلد public
-app.use(express.static('public'));
+// ✅ خدمة الملفات من المجلد الحالي (حيث يوجد index.html)
+app.use(express.static('.'));
+
+// ✅ تأكد من أن الجذر / يعرض index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // تحليل الفيديو
 app.get('/analyze', async (req, res) => {
