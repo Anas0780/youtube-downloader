@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>محول يوتيوب</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: #f8f9fa;
+      padding: 40px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 { color: #ff0000; }
+    input {
+      width: 80%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-blue { background: #007bff; color: white; }
+    .btn-red { background: #dc3545; color: white; }
+    .btn-green { background: #28a745; color: white; }
+    .qualities {
+      margin: 20px 0;
+    }
+    .quality-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      margin: 5px;
+      background: #6c757d;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎥 محول يوتيوب</h1>
+    <p>حوّل أي فيديو إلى MP3 أو MP4</p>
+
+    <input type="text" id="url" placeholder="أدخل رابط يوتيوب هنا..." />
+    <button class="btn-blue" onclick="analyze()">🔍 تحليل</button>
+
+    <div id="formatButtons" style="display:none; margin:20px 0;">
+      <button onclick="setFormat('mp3')">🎧 MP3 (صوت)</button>
+      <button onclick="setFormat('mp4')">🎬 MP4 (فيديو)</button>
+    </div>
+
+    <div id="qualities" class="qualities"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
